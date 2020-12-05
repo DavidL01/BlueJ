@@ -1,0 +1,380 @@
+/**
+ * 
+ * 
+ * @author (David, M*****, J****) 
+ * @version (eine Versionsnummer oder ein Datum)
+ */
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.BufferedWriter; 
+import java.io.FileWriter; 
+import java.io.PrintWriter;
+
+public class Quiz extends IO{
+    public static void main(String[] args) {
+
+        String Spieler1 = "";     // Name des ersten Spielers/Spielerin
+        String Spieler2 = "";     // Name des zweiten Spielers/Spielerin
+        String Gewinner = "";     // Name des Gewinners
+        String Verlierer = "";    // Name des Verlierers
+        String Antwort;
+        int punkte1 = 0;
+        int punkte2 = 0;
+        boolean NocheineRunde = true;
+        int p1 = -6;
+        int p2 = -6;
+        int p3 = -6;
+        int p4 = -6;
+        int p5 = -6;
+        String pN1 = "";
+        String pN2 = "";
+        String pN3 = "";
+        String pN4 = "";
+        String pN5 = ""; 
+
+        // Solange NocheineRunde wahr (true) ist, wiederhole..
+        while (NocheineRunde == true) {
+
+            // Spielernamen selbst festlegen
+            Spieler1 = IO.getString("Spieler 1:");
+            Spieler2 = IO.getString("Spieler 2:");
+            punkte1 = 0;
+            punkte2 = 0;
+            
+            IO.show ("Punktvergabe erläuterung: \n Bei richtiger Antwort erhält man einen Punkt, bei falscher Antwort wird ein Punkt abgezogen") ;
+            IO.show (Spieler1 + " beginnt");
+            //Die Möglichkeiten bestehen, den Buchstaben in Groß- und Kleinschreibung und das Wort einzugeben
+            //Die erste Runde
+            Antwort=IO.getString("Welches Bundesland gehört erst seit 1957 zur BRD ? \n A: Hessen                  B: Niedersachsen \n C: Saarland                D: Bayern \n Eingabe der Antwort");
+
+            if (Antwort.equals("C")||Antwort.equals("c")||Antwort.equals("Saarland")) {
+                IO.show ("Du liegts richtig");
+                punkte1++;
+            }
+            else {
+                IO.show ("Du liegst falsch");
+                punkte1--;
+            }
+
+            //Die zweite Runde
+            Antwort=IO.getString("Wie viele Schulen gibt es in Hagenow? \n A: 1                  B: 3 \n C: 8                  D: 6 \n Eingabe der Antwort");
+
+            if (Antwort.equals("D")||Antwort.equals("d")||Antwort.equals("6")) {
+                IO.show ("Du liegts richtig");
+                punkte1++;
+            }
+            else {
+                IO.show ("Du liegst falsch");
+                punkte1--;
+            }
+
+            //Die dritte Runde
+            Antwort=IO.getString("Wie oft wurde Australien in einem Monat gegoogelt? \n A: 10.000                  B: 1.800.000 \n C: 250.000                D: 2.500.000 \n Eingabe der Antwort");
+
+            if (Antwort.equals("B")||Antwort.equals("b")||Antwort.equals("1.800.000")||Antwort.equals("1,800,000")) {
+                IO.show ("Du liegts richtig");
+                punkte1++;
+            }
+            else {
+                IO.show ("Du liegst falsch");
+                punkte1--;
+            }
+
+            //Die vierte Runde
+            Antwort=IO.getString("In welchem Jahr begann der 2. Weltkrieg? \n A: 1939                 B: 1941 \n C: 1933                 D: 1948 \n Eingabe der Antwort");
+
+            if (Antwort.equals("A")||Antwort.equals("a")||Antwort.equals("1939")) {
+                IO.show ("Du liegts richtig");
+                punkte1++;
+            }
+            else {
+                IO.show ("Du liegst falsch");
+                punkte1--;
+            }
+
+            //Die fünfte Runde
+            Antwort=IO.getString("An welchem Ozean liegt Chile? \n A: Pazifischer Ozean                  B: Pazifischer und Atlantischer Ozean \n C: Atlantischer Ozean                D: Indischer Ozean \n Eingabe der Antwort");
+
+            if (Antwort.equals("B")||Antwort.equals("b")||Antwort.equals("Pazifischer und Atlantischer Ozean")) {
+                IO.show ("Du liegts richtig");
+                punkte1++;
+            }
+            else {
+                IO.show ("Du liegst falsch");
+                punkte1--;
+            }
+
+            IO.show (Spieler2 + " ist an der Reihe");
+            //Die Möglichkeiten bestehen, den Buchstaben in Groß- und Kleinschreibung und das Wort einzugeben
+            //Die erste Runde
+            Antwort=IO.getString("Welches Bundesland gehört erst seit 1957 zur BRD ? \n A: Hessen                  B: Niedersachsen \n C: Saarland                D: Bayern \n Eingabe der Antwort");
+
+            if (Antwort.equals("C")||Antwort.equals("c")||Antwort.equals("Saarland")) {
+                IO.show ("Du liegts richtig");
+                punkte2++;
+            }
+            else {
+                IO.show ("Du liegst falsch");
+                punkte2--;
+            }
+
+            //Die zweite Runde
+            Antwort=IO.getString("Wie viele Schulen gibt es in Hagenow? \n A: 1                  B: 3 \n C: 8                  D: 6 \n Eingabe der Antwort");
+
+            if (Antwort.equals("D")||Antwort.equals("d")||Antwort.equals("6")) {
+                IO.show ("Du liegts richtig");
+                punkte2++;
+            }
+            else {
+                IO.show ("Du liegst falsch");
+                punkte2--;
+            }
+
+            //Die dritte Runde
+            Antwort=IO.getString("Wie oft wurde Australien in einem Monat gegoogelt? \n A: 10.000                  B: 1.800.000 \n C: 250.000                D: 2.500.000 \n Eingabe der Antwort");
+
+            if (Antwort.equals("B")||Antwort.equals("b")||Antwort.equals("1.800.000")||Antwort.equals("1,800,000")) {
+                IO.show ("Du liegts richtig");
+                punkte2++;
+            }
+            else {
+                IO.show ("Du liegst falsch");
+                punkte2--;
+            }
+
+            //Die vierte Runde
+            Antwort=IO.getString("In welchem Jahr begann der 2. Weltkrieg? \n A: 1939                 B: 1941 \n C: 1933                 D: 1948 \n Eingabe der Antwort");
+
+            if (Antwort.equals("A")||Antwort.equals("a")||Antwort.equals("1939")) {
+                IO.show ("Du liegts richtig");
+                punkte2++;
+            }
+            else {
+                IO.show ("Du liegst falsch");
+                punkte2--;
+            }
+
+            //Die fünfte Runde
+            Antwort=IO.getString("An welchem Ozean liegt Chile? \n A: Pazifischer Ozean                  B: Pazifischer und Atlantischer Ozean \n C: Atlantischer Ozean                D: Indischer Ozean \n Eingabe der Antwort");
+
+            if (Antwort.equals("B")||Antwort.equals("b")||Antwort.equals("Pazifischer und Atlantischer Ozean")) {
+                IO.show ("Du liegts richtig");
+                punkte2++;
+            }
+            else {
+                IO.show ("Du liegst falsch");
+                punkte2--;
+            }
+            //Anzeigen der erreichten Punkte
+            IO.show(Spieler1 + " hat " +punkte1+ " Punkt(e) erreicht");
+            IO.show(Spieler2 + " hat " +punkte2+ " Punkt(e) erreicht");
+
+            //Anzeige welcher Spieler gewonnen hat
+            if (punkte1 > punkte2) {
+                IO.show(Spieler1 + " hat gewonnen" /* und  /* + Spieler2 + " hat verloren"*/);
+            }
+            else {
+                IO.show(Spieler2 + " hat gewonnen" /* und  + Spieler1 + " hat verloren"*/ );
+            }
+
+            
+
+            
+            //Highscoreberechnung
+             
+            IO.show("Spiel zu Ende, es folgt der Score \n");
+
+            int anstellevon            = 0;
+            boolean gefunden  = false;
+            //highscore eintragen und prüfen ob dieser besser ist als vorhanden?     
+            //zuerst wird geschaut, ob punkte1 größer als der erste Platz ist, wenn ja, dann merkt sich das Programm diese Stelle und gefunden auf true 
+            //falls nicht, schaut das Programm auf Platz 2 und so weiter
+            if (p1 < punkte1  && gefunden == false) {
+                gefunden = true;
+                anstellevon = 1;
+            }
+
+            if (p2 < punkte1 && gefunden == false) {
+                gefunden = true;
+                anstellevon = 2;
+            }
+
+            if (p3 < punkte1 && gefunden == false) {
+                gefunden = true;
+                anstellevon = 3;
+            } 
+
+            if  (p4 < punkte1  && gefunden == false) {
+                gefunden = true;
+                anstellevon = 4;
+            }
+
+            if (p5 < punkte1  && gefunden == false) {
+                gefunden = true;
+                anstellevon = 5;
+            } 
+
+            //sobald der richtige Platz gefunden wurde fängt die Sortierung an
+            //Score an bestimmer stelle eintragen 
+            //die schon gespeicherten scores, wenn nötig, nach unten verschieben
+
+            if (anstellevon == 1){
+                p5 = p4;
+                p4 = p3;
+                p3 = p2;
+                p2 = p1;
+                p1 = punkte1;
+                //Namen auch verschieben 
+                pN5 = pN4;
+                pN4 = pN3;
+                pN3 = pN2;
+                pN2 = pN1;
+                pN1 = Spieler1;
+
+            }
+
+            if (anstellevon == 2) {
+                p5 = p4;
+                p4 = p3;
+                p3 = p2;
+                p2 = punkte1;
+                //Namen auch verschieben
+                pN5 = pN4;
+                pN4 = pN3;
+                pN3 = pN2;
+                pN2 = Spieler1;
+            }
+
+            if (anstellevon == 3) {
+                p5 = p4;
+                p4 = p3;
+                p3 = punkte1;
+                // --- Namen auch verschieben ---
+                pN5 = pN4;
+                pN4 = pN3;
+                pN3 = Spieler1;
+            }
+
+            if (anstellevon == 4) {
+                p5 = p4;
+                p4 = punkte1;
+                // --- Namen auch verschieben ---
+                pN5 = pN4;
+                pN4 = Spieler1;
+            }
+
+            if (anstellevon == 5) {
+                p5 = punkte1;
+                // --- Namen auch verschieben ---
+                pN1 = Spieler1;
+            }    
+            
+            
+            //Für Spieler 2 Score anpassen
+            gefunden = false;
+            anstellevon = 0;
+            if (p1 < punkte2 && gefunden == false) {
+                gefunden = true;
+                anstellevon = 1;
+            }
+
+            if (p2 < punkte2 && gefunden == false) {
+                gefunden = true;
+                anstellevon = 2;
+            }
+
+            if (p3 < punkte2 && gefunden == false) {
+                gefunden = true;
+                anstellevon = 3;
+            } 
+
+            if (p4 < punkte2 && gefunden == false) {
+                gefunden = true;
+                anstellevon = 4;
+            }
+
+            if (p5 < punkte2 && gefunden == false) {
+                gefunden = true;
+                anstellevon = 5;
+            } 
+
+            if (anstellevon == 1){
+                p5 = p4;
+                p4 = p3;
+                p3 = p2;
+                p2 = p1;
+                p1 = punkte2;
+                // --- Namen auch verschieben ---
+                pN5 = pN4;
+                pN4 = pN3;
+                pN3 = pN2;
+                pN2 = pN1;
+                pN1 = Spieler2;
+
+            }
+
+            if (anstellevon == 2) {
+                p5 = p4;
+                p4 = p3;
+                p3 = p2;
+                p2 = punkte2;
+                // --- Namen auch verschieben ---
+                pN5 = pN4;
+                pN4 = pN3;
+                pN3 = pN2;
+                pN2 = Spieler2;
+            }
+
+            if (anstellevon == 3) {
+                p5 = p4;
+                p4 = p3;
+                p3 = punkte2;
+                // --- Namen auch verschieben ---
+                pN5 = pN4;
+                pN4 = pN3;
+                pN3 = Spieler2;
+            }
+
+            if (anstellevon == 4) {
+                p5 = p4;
+                p4 = punkte2;
+                // --- Namen auch verschieben ---
+                pN5 = pN4;
+                pN4 = Spieler2;
+            }
+
+            if (anstellevon == 5) {
+                p5 = punkte2;
+                // --- Namen auch verschieben ---
+                pN1 = Spieler2;
+            }  
+
+            // --- Ausgabe der Liste ---
+
+            IO.show("Platz  -   Name    -   Score \n 1      |   " + pN1 +"  |   " + p1 + "\n 2      |   " + pN2 +"  |   " + p2 + "\n 3      |   " + pN3 +"  |   " + p3 + "\n 4      |   " + pN4 +"  |   " + p4 + "\n 5      |   " + pN5 +"  -   " + p5 + "\n " );
+            // --- Noch ein Spiel starten? ---
+            NocheineRunde = IO.getBoolean("Noch eine Runde spielen?");
+            
+            //Ende des Programms 
+            // --- Highscore als Datei abspeichern ?? --- 
+            /* Code für die Speicherung der Datei ist funktionsuntüchtig, daher als Kommentar verfasst
+            Antwort=IO.getString("Wollen Sie den Highscore als Datei abspeichern?");
+
+            if (Antwort.equals("ja")||Antwort.equals("JA")||Antwort.equals("j")||Antwort.equals("Ja")) {
+            try{
+            PrintWriter pWriter = null; 
+            pWriter = new PrintWriter(new BufferedWriter(new FileWriter("C:/BlueJ/highscore.txt"))); 
+            pWriter.write("Platz  -   Name    -   Score \n 1      -    " + pN1 +"  -   " + p1 + "\n 2      -   " + pN2 +"  -   " + p2 + "\n 3      -   " + pN3 +"  -   " + p3 + "\n 4      -   " + pN4 +"  -   " + p4 + "\n 5      -   " + pN5 +"  -   " + p5 + "\n " );
+            } catch (IOException ioe) { 
+            ioe.printStackTrace(); 
+            }  
+            } 
+            
+          
+             */ 
+             
+        }
+    }
+}
+
